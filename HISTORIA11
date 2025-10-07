@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobante de Pago - HU #17</title>
+    <style>
+        /* Estilos CSS para imprimir y pantalla */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .recibo-contenedor {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2ecc71; /* Verde de éxito */
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 5px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .seccion-detalles {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+        }
+
+        .linea-detalle {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        
+        .linea-detalle strong {
+            color: #333;
+        }
+
+        .linea-total {
+            border-top: 2px solid #333;
+            padding-top: 15px;
+            margin-top: 20px;
+        }
+        
+        .linea-total .valor {
+            font-size: 1.8em;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Botones de acción */
+        .acciones {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .boton-imprimir {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        
+        /* Ocultar botones al imprimir */
+        @media print {
+            .acciones, .recibo-contenedor {
+                box-shadow: none;
+                border: none;
+            }
+            .boton-imprimir {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="recibo-contenedor">
+        <h1>✅ ¡Pago Exitoso!</h1>
+        <h2>Comprobante de Transacción Digital</h2>
+
+        <div class="seccion-detalles">
+            <div class="linea-detalle">
+                <span>Número de Transacción:</span> <strong>TXN-20251006-0001</strong>
+            </div>
+            <div class="linea-detalle">
+                <span>Fecha y Hora:</span> <strong>06/10/2025 23:55 CLT</strong>
+            </div>
+            <div class="linea-detalle">
+                <span>Método de Pago:</span> <strong>Tarjeta de Crédito (**** 1234)</strong>
+            </div>
+        </div>
+
+        <div class="seccion-detalles">
+            <h3>Detalle de la Compra</h3>
+            <div class="linea-detalle">
+                <span>Parrilla Compacta Urbana (x1)</span> <span>$ 120.000</span>
+            </div>
+            <div class="linea-detalle">
+                <span>Set de Accesorios Premium (x2)</span> <span>$ 91.980</span>
+            </div>
+            <div class="linea-detalle">
+                <span>Envío Estándar</span> <span>$ 5.000</span>
+            </div>
+        </div>
+        
+        <div class="linea-total">
+            <div class="linea-detalle">
+                <strong>Total Pagado:</strong> <span class="valor">$ 216.980</span>
+            </div>
+        </div>
+
+        <div class="acciones">
+            <button class="boton-imprimir" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+            <p><a href="catalogo.html">Volver al Catálogo</a></p>
+        </div>
+    </div>
+</body>
+</html>
